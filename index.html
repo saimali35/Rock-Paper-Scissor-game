@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>🎮 Rock Paper Scissors 🎮</h1>
+    <p class="subtitle">Choose your move and beat the computer!</p>
+
+    <div class="choice">
+
+        <div class="choices">
+            <img src="./images/rock.png" id="rock" title="Rock">
+        </div>
+
+        <div class="choices">
+            <img src="./images/paper.png" id="paper" title="Paper">
+        </div>
+
+        <div class="choices">
+            <img src="./images/scissor.png" id="scissor" title="Scissors">
+        </div>
+
+    </div>
+
+    <!-- Result Modal -->
+    <div class="result-modal" id="resultModal">
+        <div class="modal-content">
+            <div class="choices-display">
+                <div class="player-choice">
+                    <h4>Your Choice</h4>
+                    <img id="playerChoiceImg" src="" alt="">
+                </div>
+                <div class="vs">VS</div>
+                <div class="computer-choice">
+                    <h4>Computer's Choice</h4>
+                    <img id="computerChoiceImg" src="" alt="">
+                </div>
+            </div>
+            <h2 id="resultText">Draw!</h2>
+            <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+        </div>
+    </div>
+
+    <div class="score-board">
+
+        <h3>Score Board</h3>
+
+        <div class="score">
+
+            <div class="score-box">
+                <p id="user-score">0</p>
+                <p>You</p>
+            </div>
+
+            <div class="score-box">
+                <p id="computer-score">0</p>
+                <p>Computer</p>
+            </div>
+
+        </div>
+
+        <button class="reset-btn" id="resetBtn">Reset Game</button>
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
