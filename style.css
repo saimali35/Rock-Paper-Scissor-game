@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 
+/* Subtitle styling appears below the main heading */
 .subtitle {
     text-align: center;
     color: #e0e0ff;
@@ -12,6 +13,7 @@
     font-style: italic;
 }
 
+/* Global page layout and background style */
 html, body{
     width:100%;
     min-height:100vh;
@@ -75,6 +77,7 @@ h1{
     }
 }
 
+/* Choice buttons container: horizontal alignment of the game icons */
 .choices{
     display:flex;
     justify-content:center;
@@ -111,6 +114,7 @@ img{
 }
 
 /* Result Modal */
+/* This overlay appears after each round to display the result */
 .result-modal {
     display: none;
     position: fixed;
@@ -220,6 +224,7 @@ img{
     transform: scale(0.95);
 }
 
+/* Scoreboard section showing player and computer scores */
 .score-board{
     display:flex;
     flex-direction:column;
