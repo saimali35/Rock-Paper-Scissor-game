@@ -1,8 +1,11 @@
+// Track the current score for both player and computer
 let userScore = 0;
 let computerScore = 0;
 
+// Reference all choice icons inside the game board
 const choices = document.querySelectorAll(".choices img");
 
+// UI element references for score display and result modal
 const userScorePara = document.querySelector("#user-score");
 const computerScorePara = document.querySelector("#computer-score");
 const resultModal = document.querySelector("#resultModal");
@@ -12,18 +15,21 @@ const computerChoiceImg = document.querySelector("#computerChoiceImg");
 const playAgainBtn = document.querySelector("#playAgainBtn");
 const resetBtn = document.querySelector("#resetBtn");
 
+// Map the choice name to its corresponding image path
 const choiceImages = {
     rock: "./images/rock.png",
     paper: "./images/paper.png",
     scissor: "./images/scissor.png"
 };
 
+// Generate a random choice for the computer for each round
 const genComputerChoice = () => {
     const options = ["rock", "paper", "scissor"];
     const randomIdx = Math.floor(Math.random() * 3);
     return options[randomIdx];
 };
 
+// Display the result modal with the selected images and result text
 const showResult = (userChoice, computerChoice, result) => {
     playerChoiceImg.src = choiceImages[userChoice];
     computerChoiceImg.src = choiceImages[computerChoice];
@@ -44,6 +50,7 @@ const showResult = (userChoice, computerChoice, result) => {
     resultModal.classList.add("show");
 };
 
+// Main game logic: compare user move with computer move and update score
 const playGame = (userChoice) => {
     const computerChoice = genComputerChoice();
 
@@ -66,10 +73,12 @@ const playGame = (userChoice) => {
     }
 };
 
+// Close the result modal and return to the game board
 const closeResultModal = () => {
     resultModal.classList.remove("show");
 };
 
+// Reset the game to its initial state and hide the modal
 const resetGame = () => {
     userScore = 0;
     computerScore = 0;
@@ -88,7 +97,7 @@ choices.forEach((choice) => {
 playAgainBtn.addEventListener("click", closeResultModal);
 resetBtn.addEventListener("click", resetGame);
 
-// Close modal when clicking outside of it
+// Close the result modal if the user clicks outside the modal content area
 resultModal.addEventListener("click", (e) => {
     if (e.target === resultModal) {
         closeResultModal();
